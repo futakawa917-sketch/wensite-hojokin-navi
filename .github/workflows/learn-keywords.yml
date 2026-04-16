@@ -1,0 +1,52 @@
+name: Search Console/GA4から学習（週次）
+
+on:
+  schedule:
+    - cron: "0 0 * * 1"  # 毎週月曜 09:00 JST
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  learn:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate site config
+        run: npx tsx scripts/validate-config.ts
+
+      - name: Learn from Search Console
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GCP_SERVICE_ACCOUNT_KEY: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
+        run: npx tsx scripts/learn-from-search-console.ts
+
+      - name: Learn from GA4
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GCP_SERVICE_ACCOUNT_KEY: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
+          GA4_PROPERTY_ID: ${{ secrets.GA4_PROPERTY_ID }}
+        run: npx tsx scripts/learn-from-ga4.ts
+
+      - name: Commit and push learned topics
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git pull --rebase
+          git add data/
+          if git diff --staged --quiet; then
+            echo "No new topics learned"
+          else
+            git commit -m "学習: Search Console/GA4から新規トピック追加 $(date +%Y-%m-%d)"
+            git push
+          fi

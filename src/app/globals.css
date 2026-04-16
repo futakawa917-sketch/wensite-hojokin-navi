@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-noto-sans-jp);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+/* Prose styling for article content */
+.prose h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.prose h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.prose p {
+  margin-bottom: 1rem;
+  line-height: 1.8;
+}
+
+.prose ul, .prose ol {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+.prose li {
+  margin-bottom: 0.5rem;
+  line-height: 1.7;
+}
+
+.prose strong {
+  color: #c8102e;
+}
+
+.prose a {
+  color: #c8102e;
+  text-decoration: underline;
+}
+
+.prose a:hover {
+  color: #a50d24;
+}
+
+.prose img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.75rem;
+  margin: 2rem 0;
+}
+
+.prose blockquote {
+  border-left: 4px solid #c8102e;
+  background: #f0f5ff;
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 0 0.5rem 0.5rem 0;
+  font-style: normal;
+}
+
+.prose blockquote p {
+  margin: 0;
+  color: #374151;
+}
+
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+}
+
+.prose th, .prose td {
+  border: 1px solid #e5e7eb;
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+
+.prose th {
+  background: #f3f4f6;
+  font-weight: 600;
+}

@@ -1,0 +1,42 @@
+name: 不調記事リライト（月1回）
+
+on:
+  schedule:
+    - cron: "0 0 1 * *"  # 毎月1日 09:00 JST
+  workflow_dispatch:  # 基本は手動実行推奨
+
+permissions:
+  contents: write
+
+jobs:
+  rewrite:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - run: npm ci
+
+      - name: Validate site config
+        run: npx tsx scripts/validate-config.ts
+
+      - name: Rewrite underperforming articles
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GCP_SERVICE_ACCOUNT_KEY: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
+        run: npx tsx scripts/rewrite-underperforming.ts
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git pull --rebase
+          git add content/articles/
+          if git diff --staged --quiet; then
+            echo "No articles rewritten"
+          else
+            git commit -m "学習: 不調記事をリライト $(date +%Y-%m)"
+            git push
+          fi
