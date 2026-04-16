@@ -214,6 +214,25 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ===== LINE誘導（選ばれる理由の下） ===== */}
+      <section className="bg-[#06c755] py-12">
+        <div className="max-w-3xl mx-auto px-4 text-center">
+          <h2 className="font-[family-name:var(--font-noto-serif-jp)] text-2xl md:text-3xl font-black text-white">
+            まずはLINEで無料相談
+          </h2>
+          <p className="mt-3 text-white/80 text-sm">お友だち追加するだけ。1分で完了します。</p>
+          <a
+            href={siteConfig.cta.lineUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-6 inline-flex items-center gap-3 bg-white text-[#06c755] font-black text-lg px-10 py-4 hover:bg-gray-100 transition-colors"
+          >
+            <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.81 2 10.5c0 2.49 1.3 4.73 3.44 6.38-.13.47-.85 3.07-.88 3.27 0 0-.02.14.06.2.08.05.18.02.18.02.24-.03 2.78-1.82 3.94-2.68.72.11 1.48.16 2.26.16 5.52 0 10-3.81 10-8.5S17.52 2 12 2z" /></svg>
+            友だち追加して無料相談 ▶
+          </a>
+        </div>
+      </section>
+
       {/* ===== 対象 ===== */}
       <section className="bg-[#f5f2eb] py-16">
         <div className="max-w-5xl mx-auto px-4">
