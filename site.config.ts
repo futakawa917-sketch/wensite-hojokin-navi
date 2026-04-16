@@ -3,7 +3,7 @@ export const siteConfig = {
   clientId: "hojokin-navi",
   name: "補助金申請ナビ",
   description: "事業再構築・IT導入・小規模事業者持続化など、あらゆる補助金の申請をプロがサポート。無料診断で受給可能性をチェック。",
-  url: "https://hojokin-navi.vercel.app",
+  url: "https://hojokin-support.net",
 
   // === 画像 ===
   heroImage: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1920&q=80",
