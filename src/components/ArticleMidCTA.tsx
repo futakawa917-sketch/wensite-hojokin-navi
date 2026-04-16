@@ -6,16 +6,16 @@ export function ArticleMidCTA() {
       <div className="relative z-10">
         <p className="text-[#c9a961] text-xs font-bold tracking-[0.3em] mb-2">── AI即時診断 ──</p>
         <h3 className="font-[family-name:var(--font-noto-serif-jp)] text-xl md:text-2xl font-black leading-tight">
-          30秒で<span className="text-[#c9a961]">買取価格</span>がわかる
+          30秒で<span className="text-[#c9a961]">使える補助金</span>がわかる
         </h3>
         <p className="mt-3 text-sm text-gray-300">
-          個人情報不要・匿名OK。AIが過去データから買取概算を即時算出します。
+          個人情報不要・匿名OK。AIが事業内容から最適な補助金と受給額を即時診断します。
         </p>
         <Link
           href="/diagnosis"
           className="mt-5 inline-block bg-[#c8102e] hover:bg-[#a50d24] text-white font-bold px-8 py-3 transition-colors"
         >
-          無料でAI診断する ▶
+          無料でAI補助金診断する ▶
         </Link>
       </div>
     </div>

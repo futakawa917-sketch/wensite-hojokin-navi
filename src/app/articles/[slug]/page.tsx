@@ -150,13 +150,13 @@ export default async function ArticlePage({
 
         {/* CTA */}
         <div className="mt-12 bg-[#F1F1EF] rounded-xl p-8 text-center">
-          <h2 className="text-xl font-bold text-[#c8102e]">その不動産、当社が買い取ります</h2>
-          <p className="mt-2 text-gray-600">古い家・空き家でもOK。仲介手数料0円、最短3日で現金化。</p>
+          <h2 className="text-xl font-bold text-[#c8102e]">あなたの事業に使える補助金、無料で診断します</h2>
+          <p className="mt-2 text-gray-600">採択率90%超の実績。完全成功報酬で初期費用0円。</p>
           <Link
             href="/contact"
             className="mt-4 inline-block bg-[#c8102e] hover:bg-[#a50d24] text-white font-bold px-8 py-3 rounded-full transition-colors"
           >
-            無料査定はこちら
+            無料補助金診断はこちら
           </Link>
         </div>
       </article>
