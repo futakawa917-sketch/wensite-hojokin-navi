@@ -139,7 +139,7 @@ export default function Home() {
             {[
               { num: "200", unit: "件+", label: "累計採択実績" },
               { num: "90", unit: "%超", label: "採択率" },
-              { num: "0", unit: "円", label: "初期費用" },
+              { num: "完全", unit: "成功報酬", label: "料金体系" },
               { num: "全", unit: "業種", label: "対応可能" },
             ].map((item) => (
               <div key={item.label} className="border-l-2 border-[#c8102e] pl-4 text-left">

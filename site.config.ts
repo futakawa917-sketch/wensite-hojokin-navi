@@ -8,31 +8,31 @@ export const siteConfig = {
   // === 画像 ===
   heroImage: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1920&q=80",
   staffImage: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80",
-  worriesImage: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&q=80",
+  worriesImage: "https://images.unsplash.com/photo-1556745753-b2904692b3cd?w=800&q=80",
 
   // === お客様の声 ===
   testimonials: [
     {
-      name: "K.T様",
+      name: "K.T様（製造業 代表）",
       age: "40代",
       area: "東京都",
-      photo: "https://images.unsplash.com/photo-1589156229687-496a31ad1d1f?w=200&q=80",
+      photo: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=200&q=80",
       property: "事業再構築補助金",
       text: "自分では到底書けない申請書を、丁寧にヒアリングしながら完成させてもらいました。採択率が高い理由がわかりました。本当に助かりました。",
     },
     {
-      name: "S.M様",
+      name: "S.M様（IT企業 取締役）",
       age: "50代",
       area: "大阪府",
-      photo: "https://images.unsplash.com/photo-1619946794135-5bc917a27793?w=200&q=80",
+      photo: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=200&q=80",
       property: "IT導入補助金",
       text: "ITツールの選定から補助金申請まで一括で対応してもらえて、社内のDXが一気に進みました。費用の3分の2が補助されて感謝しています。",
     },
     {
-      name: "A.H様",
+      name: "A.H様（美容室 オーナー）",
       age: "30代",
       area: "愛知県",
-      photo: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=200&q=80",
+      photo: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&q=80",
       property: "小規模事業者持続化補助金",
       text: "開業したばかりで補助金の存在すら知りませんでした。無料診断がきっかけで50万円の補助金を受給できました。",
     },
