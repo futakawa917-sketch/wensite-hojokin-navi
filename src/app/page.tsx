@@ -65,7 +65,7 @@ export default function Home() {
               {siteConfig.hero.subtitle}
             </p>
             <div className="mt-6 flex flex-wrap gap-2">
-              {["採択率90%超", "完全成功報酬", "全業種対応"].map((badge) => (
+              {["採択率90%超", "相談無料", "全業種対応"].map((badge) => (
                 <span key={badge} className="bg-white border border-[#0a1f3d]/20 text-[#0a1f3d] text-xs font-bold px-3 py-1.5">
                   ◉ {badge}
                 </span>
@@ -139,7 +139,7 @@ export default function Home() {
             {[
               { num: "200", unit: "件+", label: "累計採択実績" },
               { num: "90", unit: "%超", label: "採択率" },
-              { num: "完全", unit: "成功報酬", label: "料金体系" },
+              { num: "相談", unit: "無料", label: "初回相談" },
               { num: "全", unit: "業種", label: "対応可能" },
             ].map((item) => (
               <div key={item.label} className="border-l-2 border-[#c8102e] pl-4 text-left">
@@ -338,7 +338,7 @@ export default function Home() {
                 {[
                   { num: "200件+", label: "採択実績" },
                   { num: "全業種", label: "対応可能" },
-                  { num: "成功報酬", label: "料金体系" },
+                  { num: "相談無料", label: "初回費用" },
                 ].map((item) => (
                   <div key={item.label} className="bg-white p-4 text-center border-t-2 border-[#c8102e]">
                     <p className="font-[family-name:var(--font-noto-serif-jp)] text-lg font-black text-[#0a1f3d]">{item.num}</p>

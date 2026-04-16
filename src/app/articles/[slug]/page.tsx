@@ -151,7 +151,7 @@ export default async function ArticlePage({
         {/* CTA */}
         <div className="mt-12 bg-[#F1F1EF] rounded-xl p-8 text-center">
           <h2 className="text-xl font-bold text-[#c8102e]">あなたの事業に使える補助金、無料で診断します</h2>
-          <p className="mt-2 text-gray-600">採択率90%超の実績。完全成功報酬で初期費用0円。</p>
+          <p className="mt-2 text-gray-600">採択率90%超の実績。まずはLINEで無料診断。</p>
           <Link
             href="/contact"
             className="mt-4 inline-block bg-[#c8102e] hover:bg-[#a50d24] text-white font-bold px-8 py-3 rounded-full transition-colors"

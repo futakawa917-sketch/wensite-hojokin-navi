@@ -40,12 +40,14 @@ export function Header() {
               {item.label}
             </Link>
           ))}
-          <Link
-            href="/diagnosis"
-            className="bg-[#c8102e] hover:bg-[#a50d24] text-white px-5 py-2  font-bold text-sm transition-colors"
+          <a
+            href={siteConfig.cta.lineUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-[#06c755] hover:bg-[#05b04a] text-white px-5 py-2 font-bold text-sm transition-colors"
           >
-            無料AI査定
-          </Link>
+            LINE無料相談
+          </a>
         </nav>
 
         {/* Mobile hamburger */}
@@ -77,13 +79,15 @@ export function Header() {
               {item.label}
             </Link>
           ))}
-          <Link
-            href="/diagnosis"
-            className="bg-[#c8102e] text-white text-center py-3  font-bold mt-2"
+          <a
+            href={siteConfig.cta.lineUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-[#06c755] text-white text-center py-3 font-bold mt-2"
             onClick={() => setMenuOpen(false)}
           >
-            無料AI査定はこちら
-          </Link>
+            LINE無料相談はこちら
+          </a>
         </nav>
       )}
     </header>
