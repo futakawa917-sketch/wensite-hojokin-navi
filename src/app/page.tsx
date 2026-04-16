@@ -3,7 +3,7 @@ import Image from "next/image";
 import { siteConfig } from "../../site.config";
 import { getArticles } from "@/lib/articles";
 import { FaqAccordion } from "@/components/FaqAccordion";
-import { HomeDiagnosisForm } from "@/components/HomeDiagnosisForm";
+// HomeDiagnosisForm は不使用（LINE誘導に変更）
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -72,9 +72,10 @@ export default function Home() {
               ))}
             </div>
             <div className="mt-8 flex flex-col sm:flex-row gap-3">
-              <Link href="#diagnosis" className="bg-[#c8102e] hover:bg-[#a50d24] text-white font-bold px-8 py-4 text-center transition-colors">
-                {siteConfig.hero.ctaText}　▶
-              </Link>
+              <a href={siteConfig.cta.lineUrl} target="_blank" rel="noopener noreferrer" className="bg-[#06c755] hover:bg-[#05b04a] text-white font-bold px-8 py-4 text-center transition-colors flex items-center justify-center gap-2">
+                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.81 2 10.5c0 2.49 1.3 4.73 3.44 6.38-.13.47-.85 3.07-.88 3.27 0 0-.02.14.06.2.08.05.18.02.18.02.24-.03 2.78-1.82 3.94-2.68.72.11 1.48.16 2.26.16 5.52 0 10-3.81 10-8.5S17.52 2 12 2z" /></svg>
+                LINEで無料診断 ▶
+              </a>
               <a href={`tel:${siteConfig.cta.phone}`} className="bg-white border-2 border-[#0a1f3d] text-[#0a1f3d] font-bold px-8 py-4 text-center hover:bg-[#0a1f3d] hover:text-white transition-colors">
                 ☎ {siteConfig.cta.phone}
               </a>
@@ -83,18 +84,51 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== AI診断フォーム ===== */}
-      <section id="diagnosis" className="bg-[#0a1f3d] py-16 relative">
-        <div className="relative max-w-4xl mx-auto px-4">
-          <div className="text-center mb-8">
-            <p className="text-[#c9a961] text-xs font-bold tracking-[0.3em] mb-3">── 無料AI診断 ──</p>
+      {/* ===== LINE無料診断 ===== */}
+      <section className="bg-[#0a1f3d] py-16 relative">
+        <div className="relative max-w-3xl mx-auto px-4 text-center">
+          <div className="mb-8">
+            <p className="text-[#c9a961] text-xs font-bold tracking-[0.3em] mb-3">── LINE無料診断 ──</p>
             <h2 className="font-[family-name:var(--font-noto-serif-jp)] text-3xl md:text-4xl font-black text-white leading-tight">
-              30秒で使える補助金がわかる
+              LINEで簡単<br />
+              <span className="text-[#06c755]">補助金無料診断</span>
             </h2>
-            <p className="mt-3 text-gray-300 text-sm">個人情報不要・匿名でご利用いただけます</p>
+            <p className="mt-4 text-gray-300 text-sm">
+              LINEでお友だち追加するだけで、あなたの事業に使える補助金と受給額をプロが無料診断します
+            </p>
           </div>
-          <HomeDiagnosisForm />
-          <p className="text-center text-xs text-gray-400 mt-4">※ AI診断は概算です。正式な診断は専門家が行います。</p>
+
+          <div className="bg-white p-8 md:p-12 border-t-4 border-[#06c755]">
+            <div className="flex flex-col md:flex-row items-center gap-8">
+              <div className="flex-1 text-left">
+                <h3 className="font-black text-[#0a1f3d] text-lg mb-4">LINE診断の流れ</h3>
+                <div className="space-y-3">
+                  {[
+                    { num: "01", text: "下のボタンからLINEお友だち追加" },
+                    { num: "02", text: "簡単なアンケートに回答（1分）" },
+                    { num: "03", text: "プロが最適な補助金と受給額を診断" },
+                  ].map((step) => (
+                    <div key={step.num} className="flex items-center gap-3">
+                      <span className="w-8 h-8 bg-[#06c755] text-white rounded-full flex items-center justify-center text-xs font-black flex-shrink-0">{step.num}</span>
+                      <p className="text-sm font-bold text-[#0a1f3d]">{step.text}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="flex-shrink-0">
+                <a
+                  href={siteConfig.cta.lineUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-3 bg-[#06c755] hover:bg-[#05b04a] text-white font-black text-xl px-10 py-5 transition-colors"
+                >
+                  <svg className="w-8 h-8" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.81 2 10.5c0 2.49 1.3 4.73 3.44 6.38-.13.47-.85 3.07-.88 3.27 0 0-.02.14.06.2.08.05.18.02.18.02.24-.03 2.78-1.82 3.94-2.68.72.11 1.48.16 2.26.16 5.52 0 10-3.81 10-8.5S17.52 2 12 2z" /></svg>
+                  友だち追加 ▶
+                </a>
+                <p className="mt-3 text-xs text-gray-500">完全無料・営業なし</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -365,13 +399,14 @@ export default function Home() {
         <div className="relative z-10 max-w-3xl mx-auto px-4 text-center text-white">
           <p className="text-[#c9a961] text-xs font-bold tracking-[0.3em] mb-3">── お気軽にご相談ください ──</p>
           <h2 className="font-[family-name:var(--font-noto-serif-jp)] text-3xl md:text-4xl font-black leading-tight">
-            まずは<span className="text-[#c9a961]">無料AI診断</span>で<br />使える補助金を確認
+            まずは<span className="text-[#06c755]">LINE</span>で<br />使える補助金を無料診断
           </h2>
-          <p className="mt-5 text-gray-300 text-sm">個人情報不要・完全匿名・相談無料</p>
+          <p className="mt-5 text-gray-300 text-sm">お友だち追加するだけ・完全無料・営業なし</p>
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
-            <Link href="#diagnosis" className="bg-[#c8102e] hover:bg-[#a50d24] text-white font-bold px-10 py-4 transition-colors">
-              無料AI補助金診断 ▶
-            </Link>
+            <a href={siteConfig.cta.lineUrl} target="_blank" rel="noopener noreferrer" className="bg-[#06c755] hover:bg-[#05b04a] text-white font-bold px-10 py-4 transition-colors flex items-center gap-2">
+              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.81 2 10.5c0 2.49 1.3 4.73 3.44 6.38-.13.47-.85 3.07-.88 3.27 0 0-.02.14.06.2.08.05.18.02.18.02.24-.03 2.78-1.82 3.94-2.68.72.11 1.48.16 2.26.16 5.52 0 10-3.81 10-8.5S17.52 2 12 2z" /></svg>
+              LINEで無料診断 ▶
+            </a>
             <a href={`tel:${siteConfig.cta.phone}`} className="bg-transparent border-2 border-white text-white font-bold px-10 py-4 hover:bg-white hover:text-[#0a1f3d] transition-colors">
               ☎ {siteConfig.cta.phone}
             </a>

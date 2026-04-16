@@ -66,8 +66,8 @@ export const siteConfig = {
   // === CTA ===
   cta: {
     phone: "090-2169-2424",
-    lineUrl: "https://line.me/R/",
-    lineId: "@example",
+    lineUrl: "https://lin.ee/RQYNh94",
+    lineId: "@snshack",
     email: "info@snshack.co.jp",
   },
 
@@ -280,7 +280,7 @@ export const siteConfig = {
   // === ナビゲーション ===
   nav: [
     { label: "ホーム", href: "/" },
-    { label: "AI補助金診断", href: "/diagnosis" },
+    { label: "LINE無料診断", href: "https://lin.ee/RQYNh94" },
     { label: "コラム", href: "/articles" },
     { label: "無料相談", href: "/contact" },
   ],
