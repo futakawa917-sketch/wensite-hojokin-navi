@@ -1,7 +1,7 @@
 export const siteConfig = {
   // === 基本情報 ===
   clientId: "hojokin-navi",
-  name: "補助金申請ナビ",
+  name: "補助金HACK",
   description: "事業再構築・IT導入・小規模事業者持続化など、あらゆる補助金の申請をプロがサポート。無料診断で受給可能性をチェック。",
   url: "https://hojokin-support.net",
 

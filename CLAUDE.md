@@ -27,11 +27,11 @@
 
 ---
 
-# wensite-hojokin-navi（補助金申請ナビ）- クライアント専用リポ
+# wensite-hojokin-navi（補助金HACK）- クライアント専用リポ
 
 ## ⚠️ クライアント隔離ルール（絶対厳守）
 
-**このリポジトリは「補助金申請ナビ」（株式会社SNS HACK）専用です。**
+**このリポジトリは「補助金HACK」（株式会社SNS HACK）専用です。**
 
 - clientId: `hojokin-navi`
 - ドメイン: `hojokin-navi.vercel.app`（後日独自ドメインに変更予定）
