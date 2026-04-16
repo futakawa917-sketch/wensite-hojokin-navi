@@ -64,7 +64,6 @@ export default function RootLayout({
                 <p className="font-black text-lg">{siteConfig.name}</p>
                 <p className="mt-3 text-sm text-gray-400">{siteConfig.footer.companyName}</p>
                 <p className="text-sm text-gray-500 mt-1">{siteConfig.footer.address}</p>
-                <p className="text-xs text-gray-500 mt-3">宅地建物取引業免許 国土交通大臣(X)第XXXXX号</p>
               </div>
               <div className="flex flex-col gap-2 text-sm">
                 {siteConfig.nav.map((item) => (
